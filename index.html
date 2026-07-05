@@ -3,10 +3,550 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARTA MULYA RAYA</title>
+
+    <title>ARTA MULYA RAYA CO. | Indonesia Sourcing, Procurement & Export Partner</title>
+
+    <meta name="description" content="ARTA MULYA RAYA CO. is an Indonesia Sourcing, Procurement & Export Partner connecting global buyers with trusted Indonesian suppliers.">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>ARTA MULYA RAYA</h1>
-    <p>Indonesia Sourcing, Procurement & Export Partner</p>
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <div class="logo">
+
+                <img src="assets/images/logo.png" alt="ARTA MULYA RAYA">
+
+            </div>
+
+            <ul>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#workflow">Workflow</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                Indonesia Sourcing Partner
+            </span>
+
+            <h1>
+
+                Connecting Global Buyers with Trusted Indonesian Suppliers
+
+            </h1>
+
+            <p>
+
+                ARTA MULYA RAYA CO. provides sourcing, procurement,
+                supplier verification and export support for international
+                buyers looking for reliable Indonesian products.
+
+            </p>
+
+            <div class="hero-button">
+
+                <a href="#contact" class="btn-primary">
+
+                    Contact Us
+
+                </a>
+
+                <a href="#" class="btn-secondary">
+
+                    Company Profile
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="assets/images/logo.png" alt="ARTA MULYA RAYA Logo">
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>
+/* ===================================
+   ARTA MULYA RAYA CO.
+   Premium Black & Gold Theme
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+
+    --gold: #D4AF37;
+    --gold-light: #F3D36A;
+    --gold-dark: #9A7A1D;
+
+    --black: #0A0A0A;
+    --black-soft: #111111;
+    --black-card: #161616;
+
+    --white: #FFFFFF;
+    --gray: #B8B8B8;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,0.45);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Inter', sans-serif;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(212,175,55,0.12),
+            transparent 30%),
+        radial-gradient(circle at bottom left,
+            rgba(212,175,55,0.08),
+            transparent 25%),
+        var(--black);
+
+    color: var(--white);
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+header {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(10,10,10,0.92);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+
+    z-index: 999;
+
+}
+
+nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 85px;
+
+}
+
+.logo img {
+
+    height: 52px;
+    width: auto;
+
+}
+
+nav ul {
+
+    display: flex;
+    gap: 40px;
+
+}
+
+nav ul li a {
+
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+
+    position: relative;
+
+}
+
+nav ul li a:hover {
+
+    color: var(--gold);
+
+}
+
+nav ul li a::after {
+
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: .3s;
+
+}
+
+nav ul li a:hover::after {
+
+    width: 100%;
+
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 120px;
+    padding-bottom: 80px;
+
+}
+
+.hero-grid {
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+
+}
+
+.badge {
+
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(212,175,55,0.4);
+
+    border-radius: 50px;
+
+    color: var(--gold);
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+
+    background: rgba(212,175,55,0.08);
+
+}
+
+.hero-content h1 {
+
+    font-size: 64px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+
+}
+
+.hero-content h1 {
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #f4e2a0
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.hero-content p {
+
+    max-width: 650px;
+
+    color: var(--gray);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+
+}
+
+.hero-button {
+
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.btn-primary {
+
+    padding: 16px 34px;
+
+    background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    color: #000;
+
+    font-weight: 700;
+
+    border-radius: 10px;
+
+    transition: .3s ease;
+
+    box-shadow:
+        0 10px 30px rgba(212,175,55,0.25);
+
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.btn-secondary {
+
+    padding: 16px 34px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: .3s ease;
+
+}
+
+.btn-secondary:hover {
+
+    background: var(--gold);
+
+    color: #000;
+
+}
+
+/* ===================================
+   HERO IMAGE
+=================================== */
+
+.hero-image {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero-image img {
+
+    width: 420px;
+    max-width: 100%;
+
+    filter:
+        drop-shadow(0 0 20px rgba(212,175,55,0.2))
+        drop-shadow(0 0 50px rgba(212,175,55,0.12));
+
+    animation: floatLogo 4s ease-in-out infinite;
+
+}
+
+@keyframes floatLogo {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:992px){
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+        text-align:center;
+
+    }
+
+    .hero-content p{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hero-button{
+
+        justify-content:center;
+
+    }
+
+    .hero-image{
+
+        order:-1;
+
+    }
+
+    .hero-image img{
+
+        width:280px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:48px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+        height:auto;
+        padding:20px 0;
+
+    }
+
+    nav ul{
+
+        margin-top:20px;
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+
+    }
+
+    .hero-content h1{
+
+        font-size:38px;
+
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-content h1{
+
+        font-size:32px;
+
+    }
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+}
