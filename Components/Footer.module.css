@@ -1,0 +1,80 @@
+.footer {
+  background: #0a0a0a;
+  border-top: 1px solid #2b2b2b;
+  padding: 80px 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+}
+
+.brand {
+  max-width: 520px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.description {
+  color: #bfbfbf;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.heading {
+  color: #c9a227;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.item {
+  color: #bfbfbf;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.location {
+  color: #c9a227;
+  margin-bottom: 12px;
+}
+
+.contact {
+  text-align: right;
+}
+
+.copyright {
+  margin-top: 28px;
+  color: #777;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+
+  .footer {
+    padding: 60px 30px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .contact {
+    text-align: center;
+  }
+
+}

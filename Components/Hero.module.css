@@ -1,0 +1,186 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:120px 40px;
+  background: #0b0b0b;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+
+.left {
+  flex: 1;
+  text-align: left;
+}
+
+.eyebrow {
+  color: #c9a227;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 84px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 36px;
+}
+
+.description {
+  color: #d0d0d0;
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.primaryButton {
+  display: inline-block;
+
+  padding: 18px 46px;
+
+  background: #c9a227;
+  color: #0b0b0b;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease,
+    box-shadow .25s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+
+  display:inline-block;
+
+  padding:18px 46px;
+
+  background:transparent;
+
+  color:#fff;
+
+  border:1px solid #c9a227;
+
+  border-radius:10px;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  text-decoration:none;
+
+  cursor:pointer;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease;
+}
+
+.secondaryButton:hover {
+    transform: translateY(-2px);
+}
+
+.right {
+  flex: 1;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+/* Laptop */
+
+@media (max-width: 1200px) {
+  .container {
+    gap: 80px;
+  }
+
+  .title {
+    font-size: 64px;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .description {
+    margin: 0 auto 40px;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .title {
+    font-size: 56px;
+  }
+
+  .hero {
+    padding: 80px 30px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}

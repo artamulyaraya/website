@@ -1,0 +1,61 @@
+.cta {
+  background: #c9a227;
+  padding: 100px 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+
+  color: #222;
+
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.button {
+  padding: 18px 48px;
+  display:inline-block;
+  text-decoration:none;
+
+  background: #111;
+  color: #fff;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease;
+}
+
+.button:hover {
+  .button:hover{
+    transform:translateY(-2px);
+    background:#222;
+}
+}
+
+@media (max-width:900px){
+
+  .cta{
+    padding:80px 30px;
+  }
+
+  .description{
+    font-size:18px;
+  }
+
+}
