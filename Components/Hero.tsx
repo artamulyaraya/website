@@ -10,16 +10,19 @@ export default function Hero() {
         {/* LEFT */}
         <div className={styles.left}>
           <p className={styles.eyebrow}>
-            YOUR TRUSTED INDONESIA
+            Trusted Partner for Global Buyers
           </p>
 
    <h1 className={styles.title}>
-  SOURCING &
-  PROCUREMENT PARTNER
+  Indonesia Sourcing,
+  <br />
+  Procurement &
+  <br />
+  Export Partner
 </h1>
 
           <p className={styles.description}>
-            Helping international buyers source, procure, inspect, and export Indonesian products with confidence.
+            Helping global buyers source reliable Indonesian products through trusted suppliers, procurement support, quality inspection, and export solutions.
           </p>
 
           <div className={styles.buttons}>
