@@ -9,6 +9,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className={styles.header}>
+      <div className={styles.headerInner}>
       <div className={styles.logoArea}>
         <Image
           src="/images/amr-logo.png"
@@ -72,6 +73,7 @@ export default function Header() {
           Get a Quote
         </button>
       </nav>
+      </div>
     </header>
   );
 }

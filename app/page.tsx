@@ -5,6 +5,7 @@ import Services from "../Components/Services";
 import WhyChooseUs from "../Components/WhyChooseUs";
 import Capability from "../Components/Capability";
 import Workflow from "../Components/Workflow";
+import RequestQuote from "../Components/RequestQuote";
 import CTA from "../Components/CTA";
 import Footer from "../Components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Capability />
       <Workflow />
       <CTA />
+      <RequestQuote />
       <Footer />
     </>
   );
