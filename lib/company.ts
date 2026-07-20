@@ -5,7 +5,7 @@ export const company = {
 
   location: "East Java 68358, Indonesia",
 
-  email: "info@artamulyaraya.com",
+  email: "sales@artamulyaraya.com",
 
   phone: "+62 877-8147-9099",
 

@@ -12,7 +12,7 @@ export const contactCards = [
   {
     icon: "mail",
     title: "Email",
-    value: "artamulyaraya@gmail.com",
+    value: "sales@artamulyaraya.com",
     description: "For business inquiries and partnership discussions.",
   },
   {

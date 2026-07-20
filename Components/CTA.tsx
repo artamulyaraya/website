@@ -20,7 +20,7 @@ export default function CTA() {
       </p>
 
       <a
-  href="mailto:info@artamulyaraya.com"
+  href="mailto:sales@artamulyaraya.com"
   className={styles.button}
 >
   Contact Us
