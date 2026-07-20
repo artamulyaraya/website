@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { InquiryForm } from "../types/inquiry";
 import styles from "./RequestQuote.module.css";
 import SectionTitle from "./UI/SectionTitle";
 import { countries } from "../lib/countries";
@@ -9,22 +10,75 @@ export default function RequestQuote() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (
+  const [form, setForm] = useState<InquiryForm>({
+  fullName: "",
+  company: "",
+  country: "",
+  email: "",
+  phone: "",
+  product: "",
+  quantity: "",
+  destination: "",
+  requirements: "",
+});
+
+const handleChange = (
+  e: React.ChangeEvent<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >
+) => {
+  const { name, value } = e.target;
+
+  setForm((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
+
+const handleSubmit = async (
   e: React.FormEvent<HTMLFormElement>
 ) => {
-
   e.preventDefault();
 
+  if (loading) return;
+
+  setSubmitted(false);
   setLoading(true);
 
-  await new Promise((resolve) =>
-    setTimeout(resolve, 1200)
-  );
+  try {
+    const response = await fetch("/api/inquiry", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
 
-  setLoading(false);
+    if (!response.ok) {
+      throw new Error("Failed to send inquiry");
+    }
 
-  setSubmitted(true);
+    setForm({
+      fullName: "",
+      company: "",
+      country: "",
+      email: "",
+      phone: "",
+      product: "",
+      quantity: "",
+      destination: "",
+      requirements: "",
+    });
 
+    setSubmitted(true);
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send inquiry. Please try again.");
+
+  } finally {
+    setLoading(false);
+  }
 };
 
   return (
@@ -46,10 +100,16 @@ export default function RequestQuote() {
         >
 
           <div className={styles.field}>
-            <label>Full Name *</label>
+            <label htmlFor="fullName">
+              Full Name *
+            </label>
 
             <input
+              id="fullName"
+              name="fullName"
               type="text"
+              value={form.fullName}
+              onChange={handleChange}
               maxLength={100}
               placeholder="John Smith"
               autoComplete="name"
@@ -58,10 +118,16 @@ export default function RequestQuote() {
           </div>
 
           <div className={styles.field}>
-            <label>Company Name *</label>
+            <label htmlFor="company">
+              Company Name *
+            </label>
 
             <input
+              id="company"
+              name="company"
               type="text"
+              value={form.company}
+              onChange={handleChange}
               placeholder="ABC Trading Co., Ltd."
               maxLength={150}
               autoComplete="organization"
@@ -70,9 +136,18 @@ export default function RequestQuote() {
           </div>
 
           <div className={styles.field}>
-            <label>Country *</label>
+            <label htmlFor="country">
+              Country *
+            </label>
 
-            <select defaultValue="" required>
+            <select
+                id="country"
+                name="country"
+                value={form.country}
+                onChange={handleChange}
+                required
+              >
+
               <option
                   value=""
                   disabled
@@ -92,49 +167,80 @@ export default function RequestQuote() {
           </div>
 
           <div className={styles.field}>
-            <label>Business Email *</label>
+            <label htmlFor="email">
+              Business Email *
+            </label>
             <input
-              type="email"
-              placeholder="john@company.com"
-              autoComplete="email"
-              required
-            />
+                id="email"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="john@company.com"
+                autoComplete="email"
+                required
+              />
           </div>
 
           <div className={styles.field}>
-            <label>Phone / WhatsApp *</label>
+            <label htmlFor="phone">
+              Phone / WhatsApp *
+            </label>
 
             <input
-              type="tel"
-              autoComplete="tel"
-              placeholder="e.g. +1 555 123 4567"
-            />
+                id="phone"
+                name="phone"
+                type="tel"
+                value={form.phone}
+                onChange={handleChange}
+                autoComplete="tel"
+                placeholder="e.g. +1 555 123 4567"
+              />
           </div>
 
           <div className={styles.field}>
-            <label>Product or Commodity *</label>
+            <label htmlFor="product">
+              Product or Commodity *
+            </label>
 
             <input
-              type="text"
-              placeholder="Coconut Charcoal Briquette"
-              maxLength={150}
-              required
-            />
+                id="product"
+                name="product"
+                type="text"
+                value={form.product}
+                onChange={handleChange}
+                placeholder="Coconut Charcoal Briquette"
+                maxLength={150}
+                required
+              />
           </div>
 
           <div className={styles.field}>
-            <label>Estimated Quantity</label>
+            <label htmlFor="quantity">
+              Estimated Quantity
+            </label>
 
             <input
-              type="text"
-              placeholder="1 Container / Month"
-            />
+                id="quantity"
+                name="quantity"
+                type="text"
+                value={form.quantity}
+                onChange={handleChange}
+                placeholder="1 Container / Month"
+              />
           </div>
 
           <div className={styles.field}>
-            <label>Target Delivery Country</label>
+            <label htmlFor="destination">
+              Target Delivery Country
+            </label>
 
-            <select defaultValue="">
+            <select
+                id="destination"
+                name="destination"
+                value={form.destination}
+                onChange={handleChange}
+            >
               <option
                   value=""
                   disabled
@@ -156,14 +262,21 @@ export default function RequestQuote() {
           </div>
 
           <div className={styles.fieldFull}>
-            <label>Your Requirements</label>
+            <label htmlFor="requirements">
+              Your Requirements
+            </label>
 
             <textarea
-              rows={6}
-              placeholder="Describe your sourcing requirements..."
-              maxLength={2000}
-              required
-            />
+                id="requirements"
+                name="requirements"
+                value={form.requirements}
+                onChange={handleChange}
+                rows={6}
+                placeholder="Describe your sourcing requirements..."
+                maxLength={2000}
+                required
+              />
+
           </div>
 
           <div className={styles.actions}>
@@ -181,7 +294,11 @@ export default function RequestQuote() {
 
         {submitted && (
 
-          <p className={styles.success}>
+          <p
+            className={styles.success}
+            role="status"
+            aria-live="polite"
+          >
 
             ✓ Thank you for your inquiry.
             Our sourcing team will contact you shortly.

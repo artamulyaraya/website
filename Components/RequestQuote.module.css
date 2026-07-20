@@ -1,5 +1,5 @@
 .quote {
-  background: #111;
+  background: var(--color-bg-dark);
   padding: 80px 40px;
 }
 
@@ -36,7 +36,7 @@
 
 .form label{
 
-    color:#fff;
+    color: var(--color-white);
 
     font-size:15px;
 
@@ -53,60 +53,25 @@
 
   box-sizing: border-box;
 
-  padding:16px 20px;
-
-  background: #161616;
-
-  color: #ffffff;
-
-  border: 1px solid #333;
-
-  border-radius: 10px;
-
-  font-size: 16px;
-
-  outline: none;
-
-  transition:
-    border-color .25s ease,
-    box-shadow .25s ease;
-}
-
-.form select {
-  width: 100%;
-
-  box-sizing: border-box;
-
   padding: 16px 20px;
 
   background: #161616;
 
-  color: #ffffff;
+  color: var(--color-white);
 
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
 
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 
   font-size: 16px;
 
   outline: none;
-
-  appearance: none;
-
-  cursor: pointer;
 
   transition:
     border-color .25s ease,
     box-shadow .25s ease;
 }
 
-.form select:focus {
-
-  border-color:#c9a227;
-
-  box-shadow:0 0 0 2px rgba(201,162,39,.18);
-
-}
 
 .form option {
 
@@ -117,7 +82,7 @@
 .form input:focus,
 .form textarea:focus {
 
-  border-color: #c9a227;
+  border-color: var(--color-gold);
   
   
 
@@ -125,13 +90,6 @@
 
 }
 
-.form select:focus{
-
-  border-color:#c9a227;
-
-  box-shadow:0 0 0 2px rgba(201,162,39,.18);
-
-}
 
 .form textarea {
 
@@ -141,40 +99,52 @@
 
 }
 
+
 .form button {
 
-  padding: 16px 36px;
-  
-  align-self: center;
+  padding:16px 36px;
 
-  width: fit-content;
+  align-self:center;
 
-  min-width: 240px;
+  width:fit-content;
 
-  background: #c9a227;
+  min-width:240px;
 
-  color: #111;
+  background:var(--color-gold);
 
-  border: none;
+  color:var(--color-black);
 
-  border-radius: 10px;
+  border:none;
 
-  font-size: 17px;
+  outline:none;
 
-  font-weight: 600;
+  appearance:none;
+  -webkit-appearance:none;
 
-  cursor: pointer;
+  border-radius:var(--radius-md);
+
+  font-size:17px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
 
   transition:
-    transform .25s ease,
-    background .25s ease;
+    transform var(--transition-normal),
+    background var(--transition-normal),
+    box-shadow var(--transition-normal);
+
 }
 
 .form button:hover {
 
-  transform: translateY(-2px);
+  background:#d4a017;
 
-  background: #d6b13a;
+  transform:translateY(-2px);
+
+  box-shadow:0 10px 22px rgba(0,0,0,.25);
 
 }
 
@@ -217,13 +187,13 @@
   width:100%;
   box-sizing:border-box;
 
-  padding:16px 20px;
+  padding: 16px 20px;
 
   background:#161616;
-  color:#ffffff;
+  color: var(--color-white);
 
-  border:1px solid #333;
-  border-radius:10px;
+  border:1px solid var(--color-border);
+  border-radius: var(--radius-md);
 
   font-size:16px;
 
@@ -231,9 +201,27 @@
 
   appearance:none;
 
+  cursor: pointer;
+
   transition:
     border-color .25s ease,
     box-shadow .25s ease;
+
+}
+
+.form select:focus {
+
+  border-color: var(--color-gold);
+
+  box-shadow:0 0 0 2px rgba(201,162,39,.18);
+
+}
+
+.form button:focus-visible{
+
+  outline:2px solid var(--color-gold);
+
+  outline-offset:3px;
 
 }
 
@@ -267,7 +255,7 @@
 
   .quote{
 
-    padding:70px 20px;
+    padding: 70px 20px;
 
   }
 

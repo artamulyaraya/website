@@ -32,46 +32,53 @@ export default function Header() {
       {/* Navigation */}
 
   <button
-    className={styles.burger}
-    onClick={() => setMenuOpen(!menuOpen)}
-    aria-label="Toggle navigation"
-  >
-    {menuOpen ? "✕" : "☰"}
-  </button>
+  className={styles.burger}
+  onClick={() => setMenuOpen((prev) => !prev)}
+  aria-label="Toggle navigation"
+  aria-expanded={menuOpen}
+  aria-controls="primary-navigation"
+>
+  {menuOpen ? "✕" : "☰"}
+</button>
 
-      <nav
+    <nav
+  id="primary-navigation"
   className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}
 >
 
 <a
   href="#home"
-  onClick={() => setMenuOpen(false)}
+  onClick={() => setMenuOpen((prev) => !prev)}
 >
   Home
 </a>
 
 <a href="#about"
-  onClick={() => setMenuOpen(false)}
+  onClick={() => setMenuOpen((prev) => !prev)}
 >
   About
 </a>
 
 <a href="#services"
-  onClick={() => setMenuOpen(false)}
+  onClick={() => setMenuOpen((prev) => !prev)}
 >
   Services
 </a>
 
 <a href="#contact"
-  onClick={() => setMenuOpen(false)}
+  onClick={() => setMenuOpen((prev) => !prev)}
 >
   Contact
 </a>
 
-        <button className={styles.quoteButton}
-        onClick={() => setMenuOpen(false)}>
-          Get a Quote
-        </button>
+<a
+  href="#quote"
+  className={styles.quoteButton}
+  onClick={() => setMenuOpen((prev) => !prev)}
+  >
+  Get a Quote
+</a>
+
       </nav>
       </div>
     </header>

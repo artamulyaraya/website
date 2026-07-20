@@ -1,11 +1,13 @@
+@import "../styles/variables.css";
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: #0a0a0a;
-  color: white;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
   font-family: Arial, sans-serif;
 }
 
